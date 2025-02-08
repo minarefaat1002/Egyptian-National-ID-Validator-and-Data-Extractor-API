@@ -63,7 +63,7 @@ Docker and Docker Compose installed on your machine.
 # 🛠️ Installation
 ## 1- Clone the repository:
 ```bash
-git clone https://github.com/yourusername/egyptian-national-id-validator.git
+git clone https://github.com/minarefaat1002/Egyptian-National-ID-Validator-and-Data-Extractor-API.git
 cd Egyptian-National-ID-Validator-and-Data-Extractor-API
 ```
 ## 2- Start the application using Docker Compose:
