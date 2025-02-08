@@ -54,3 +54,34 @@ What it does: SlowAPI is a rate-limiting library for FastAPI. It is used to limi
 requests a user can make within a specified time frame.
 Why it was chosen: SlowAPI is lightweight, easy to integrate with FastAPI, and provides a simple 
 way to implement rate limiting without requiring additional infrastructure like Redis.
+
+
+## 🚀 Getting Started
+# 📋 Prerequisites
+Docker and Docker Compose installed on your machine.
+
+# 🛠️ Installation
+Clone the repository:
+
+bash
+Copy
+git clone https://github.com/yourusername/egyptian-national-id-validator.git
+cd egyptian-national-id-validator
+Start the application using Docker Compose:
+
+```bash
+#!/bin/bash
+echo "Hello, World!"
+
+docker-compose up --build
+This will:
+
+Build the Docker images for the FastAPI app and PostgreSQL database.
+
+Start the containers and link them together.
+
+Access the API:
+
+The FastAPI app will be running at http://localhost:8000.
+
+You can access the interactive API documentation (Swagger UI) at http://localhost:8000/docs.
