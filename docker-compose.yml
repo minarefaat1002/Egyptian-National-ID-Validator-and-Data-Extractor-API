@@ -9,9 +9,6 @@ services:
     env_file: .env
     volumes:
       - .:/app
-      # - /usr/src/app/backend/node_modules
-      # this line is for ignoring node_modules in the host machine and always use whatever in the container
-      # this guarantees taht the node_modeules on the host machien willn't override the node_modules in the container
     image: api:fastapi # name of the image
     container_name: backend
     ports:
