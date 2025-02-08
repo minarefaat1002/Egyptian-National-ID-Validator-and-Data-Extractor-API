@@ -61,27 +61,19 @@ way to implement rate limiting without requiring additional infrastructure like 
 Docker and Docker Compose installed on your machine.
 
 # 🛠️ Installation
-Clone the repository:
-
-bash
-Copy
+## 1- Clone the repository:
+```bash
 git clone https://github.com/yourusername/egyptian-national-id-validator.git
 cd egyptian-national-id-validator
-Start the application using Docker Compose:
-
+```
+## 2- Start the application using Docker Compose:
 ```bash
-#!/bin/bash
-echo "Hello, World!"
-
 docker-compose up --build
+```
 This will:
+1- Build the Docker images for the FastAPI app and PostgreSQL database.
+2- Start the containers and link them together.
 
-Build the Docker images for the FastAPI app and PostgreSQL database.
-
-Start the containers and link them together.
-
-Access the API:
-
-The FastAPI app will be running at http://localhost:8000.
-
-You can access the interactive API documentation (Swagger UI) at http://localhost:8000/docs.
+## 3- Access the API:
+1- The FastAPI app will be running at http://localhost:8000.
+2- You can access the interactive API documentation (Swagger UI) at http://localhost:8000/docs.
