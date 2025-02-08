@@ -3,6 +3,7 @@ This project is a backend service that validates Egyptian national IDs and extra
 information such as birth date, governorate, and gender. The API is built using FastAPI and PostgreSQL,
 and it is containerized using Docker Compose. The project includes features like rate limiting, API key
 authentication, and request tracking.
+
 # 🚀 Features
 ✅ National ID Validation: Validates the Egyptian national ID based on its structure and checksum.
    - 📂 Data Extraction: Extracts the following information from a valid national ID:
@@ -83,28 +84,41 @@ This will:
 
 # 🌐 API Endpoint
 URL: localhost:8000/validate-id
+
 Method: GET
+
 Authentication: API Key (send in the X-API-KEY header)
+
 Query Parameter:
+
    national_id: The Egyptian national ID to validate and extract data from (e.g., 29001011234567).
+   
 Example Request:
 ```bash
-GET /api/validate-national-id/?national_id=29001011234567
+GET localhost:8000/validate-id/?national_id=29001011234567
 ```
 
 Response Body:
 ```json
 {
-    "valid": true,
-    "birth_date": "1990-01-01",
-    "governorate": "Cairo",
-    "gender": "Male"
+  "national_id": "29001011234567",
+  "birth_date": "1-1-1990",
+  "gender": "Female",
+  "governorate": "Dakahlia",
+  "serial_number": "3456",
+  "check_digit": "7"
 }
 ```
+## To test the endpoint easily: go to localhost:8000/docs 
+## Make sure to send a valid api key in the header (X-API-KEY heaader). for example use "your-api-key-1" in the X-API-KEY header.
+## The valid API keys are included in the .env, and to add a new api key we add it in the .env file like in the following image.
+![assessment 1](https://github.com/user-attachments/assets/dc7ad289-ce09-4ae9-ad6d-273901d6ea49)
+
 
 # ⏳ Rate Limiting
 The API is configured to allow 100 requests per hour per API key using SlowAPI. If the limit is exceeded,
 the API will respond with a 429 Too Many Requests status code.
+## The default configuration for the rate limiting is 5 requests per minute. to customize it just change the variable ```REQUESTS_PER_MINUTE``` in the main.py file.
 
 # 📝 Request Tracking
 All API requests are logged in the PostgreSQL database, including:
