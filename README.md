@@ -85,12 +85,13 @@ This will:
 URL: localhost:8000/validate-id
 Method: GET
 Authentication: API Key (send in the X-API-KEY header)
-Request Body:
-```json
-{
-    "national_id": "29001011234567"
-}
+Query Parameter:
+   national_id: The Egyptian national ID to validate and extract data from (e.g., 29001011234567).
+Example Request:
+```bash
+GET /api/validate-national-id/?national_id=29001011234567
 ```
+
 Response Body:
 ```json
 {
@@ -100,6 +101,17 @@ Response Body:
     "gender": "Male"
 }
 ```
+
+# ⏳ Rate Limiting
+The API is configured to allow 100 requests per hour per API key using SlowAPI. If the limit is exceeded,
+the API will respond with a 429 Too Many Requests status code.
+
+# 📝 Request Tracking
+All API requests are logged in the PostgreSQL database, including:
+🔑 API key used
+🆔 National ID submitted
+⏰ Timestamp of the request
+This is useful for tracking usage in a paid service model.
 
 
 
