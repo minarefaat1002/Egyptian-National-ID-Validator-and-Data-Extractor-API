@@ -72,6 +72,7 @@ docker-compose up --build
 ```
 This will:
 1- Build the Docker images for the FastAPI app and PostgreSQL database.
+
 2- Start the containers and link them together.
 
 ## 3- Access the API:
