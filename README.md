@@ -73,9 +73,33 @@ docker-compose up --build
 This will:
 1- Build the Docker images for the FastAPI app and PostgreSQL database.
 
-2- Start the containers and link them together.
+2- Start the contains and link them together
 
 ## 3- Access the API:
 1- The FastAPI app will be running at http://localhost:8000.
 
 2- You can access the interactive API documentation (Swagger UI) at http://localhost:8000/docs.
+
+
+# 🌐 API Endpoint
+URL: localhost:8000/validate-id
+Method: GET
+Authentication: API Key (send in the X-API-KEY header)
+Request Body:
+```json
+{
+    "national_id": "29001011234567"
+}
+```
+Response Body:
+```json
+{
+    "valid": true,
+    "birth_date": "1990-01-01",
+    "governorate": "Cairo",
+    "gender": "Male"
+}
+```
+
+
+
