@@ -108,10 +108,13 @@ the API will respond with a 429 Too Many Requests status code.
 
 # 📝 Request Tracking
 All API requests are logged in the PostgreSQL database, including:
+
 🔑 The service that made the request
+
 🆔 National ID submitted
 
 ⏰ Timestamp of the request
+
 This is useful for tracking usage in a paid service model.
 
 
@@ -119,10 +122,16 @@ This is useful for tracking usage in a paid service model.
 The application is ready for deployment using Docker Compose. For production, consider using:
 
 Nginx as a reverse proxy.
+
 Gunicorn as a WSGI server for serving the FastAPI app.
 
 Docker Swarm or Kubernetes for orchestration in a production environment.
 
 
+# 🔮 Future Improvements
+Enhanced Security: Implement OAuth2 for more secure authentication.
 
+Billing Integration: Integrate with a billing system to charge users based on API usage.
+
+Caching: Implement caching for frequently requested national IDs to improve performance.
 
