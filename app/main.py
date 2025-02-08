@@ -62,7 +62,7 @@ async def validate_id(
             db: Session = Depends(get_db)):
     
     extracted_data = EgyptianNationalIDUtility.validate(national_id)
-    api_call = APICall(api_key=x_api_key)
+    api_call = APICall(service_name=API_KEYS[x_api_key], national_id=national_id)
     db.add(api_call)
     db.commit()
     return extracted_data
