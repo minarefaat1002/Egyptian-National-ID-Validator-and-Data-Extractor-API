@@ -76,4 +76,5 @@ This will:
 
 ## 3- Access the API:
 1- The FastAPI app will be running at http://localhost:8000.
+
 2- You can access the interactive API documentation (Swagger UI) at http://localhost:8000/docs.
