@@ -1,12 +1,22 @@
 from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
+from .db import Base
 
-Base = declarative_base()
+
+# ===========================
+# 🌐    APICall Model     🌐
+# ==========================+
 
 class APICall(Base):
-    __tablename__ = "api_calls"
-    id = Column(Integer, primary_key=True, index=True)
+
+    # The table name in the database
+    __tablename__ = "api_calls" 
+
+    # 🆔 PRIMARY KEY 🆔
+    id = Column(Integer, primary_key=True, index=True) 
+
+    # 🔑💻 API KEY 💻🔑
     api_key = Column(String, index=True)
-    endpoint = Column(String)
+
+    # 🕒 TIMESTAMP  🕒
     timestamp = Column(DateTime, default=datetime.utcnow)
