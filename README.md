@@ -149,3 +149,7 @@ Billing Integration: Integrate with a billing system to charge users based on AP
 
 Caching: Implement caching for frequently requested national IDs to improve performance.
 
+# 📜 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+This README provides a comprehensive guide to setting up, using, and understanding the Egyptian National ID Validator and Data-Extractor API. If you have any questions or need further assistance, please feel free to reach out. 😊
