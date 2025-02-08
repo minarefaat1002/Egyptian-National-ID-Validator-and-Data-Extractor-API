@@ -68,7 +68,7 @@ cd Egyptian-National-ID-Validator-and-Data-Extractor-API
 ```
 ## 2- Start the application using Docker Compose:
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 This will:
 1- Build the Docker images for the FastAPI app and PostgreSQL database.
