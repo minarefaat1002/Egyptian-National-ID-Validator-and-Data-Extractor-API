@@ -1,5 +1,6 @@
 from .schemas import NationalIDResposne
 from fastapi import  HTTPException
+from typing import Union
 
 # Information regarding validation and extraction of the Egyptian National ID are extracted from the following sources
 #  1. https://en.wikipedia.org/wiki/Egyptian_National_Identity_Card
@@ -47,7 +48,7 @@ class EgyptianNationalIDUtility:
                 '88': 'Foreign'}
 
     @classmethod
-    def get_governorate_name(cls, province_code):
+    def get_governorate_name(cls, province_code: str) -> Union[str, None]:
         """
         Maps a province code to its corresponding name.
 
@@ -57,7 +58,6 @@ class EgyptianNationalIDUtility:
         Returns:
             str: The name of the province.
         """
-        
 
         if province_code not in cls.province_map:
             raise HTTPException(status_code=400, detail="The provicded province_code is wrong.")
@@ -65,15 +65,16 @@ class EgyptianNationalIDUtility:
 
     
     @staticmethod
-    def get_gender(gender_digit):
-        """Returns gender based on the third digit:
+    def get_gender(gender_digit: str) -> str:
+        """Returns gender based on the 13th digit:
         Odd for male, even for female."""
+
         gender_digit = int(gender_digit)
         return "Male" if gender_digit % 2 != 0 else "Female"
     
     
     @classmethod
-    def get_birth_date(cls, birth_date):
+    def get_birth_date(cls, birth_date: str) -> Union[str, None]:
 
         # (1-6) digits: Represent the date of birth (YYMMDD).
         birth_date_part = birth_date[1:]
@@ -97,7 +98,7 @@ class EgyptianNationalIDUtility:
     
     
     @classmethod
-    def validate(cls, national_id):
+    def validate(cls, national_id: str) -> Union[str, None]:
         """
         Validates and extracts information from an Egyptian National ID.
 
@@ -123,7 +124,7 @@ class EgyptianNationalIDUtility:
         # last digit: Represent a check digit or checksum. It's used
         # to validate the authenticity of the enire ID number.
         check_digit = national_id[13]
-        print("returning")
+
         return NationalIDResposne(
             national_id=national_id,
             birth_date=birth_date,
