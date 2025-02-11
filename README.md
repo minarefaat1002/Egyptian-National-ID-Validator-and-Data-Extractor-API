@@ -60,7 +60,7 @@ Why it was chosen: SlowAPI is lightweight, easy to integrate with FastAPI, and p
 way to implement rate limiting without requiring additional infrastructure like Redis.
 
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 # 📋 Prerequisites
 Docker and Docker Compose installed on your machine.
 
