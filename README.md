@@ -10,7 +10,7 @@ authentication, and request tracking.
    - 🎂 Birth date (year, month, day)
    - 🏙️ Governorate
    - 👫 Gender
-   - 
+
 ⏳ Rate Limiting: Limits the number of requests a service can make to the api within a specified time frame.
 
 🔑 API Key Authentication: Ensures that only authenticated services can access the API.
